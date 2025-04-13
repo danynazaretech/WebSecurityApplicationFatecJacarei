@@ -40,7 +40,7 @@ docker-compose up --build
 - A aplicação será acessível via navegador ou terminal, dependendo do seu projeto.
 - Para rodar em segundo plano:
   ```bash
-  docker-compose up -d --build
+  docker compose up -d --build
   ```
   - Ver os containers que estão rodando:
   ```bash
