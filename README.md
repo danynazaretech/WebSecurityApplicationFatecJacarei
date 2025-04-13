@@ -30,7 +30,7 @@ cd WebSecurityApplicationFatecJacarei
 
 4️⃣ **Construa e execute o container com Docker Compose**  
 ```bash
-docker-compose up --build
+docker compose up --build
 ```
 
 ---
