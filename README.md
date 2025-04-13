@@ -20,7 +20,7 @@ Se ainda não tiver, baixe e instale o Docker Desktop a partir do site oficial:
 
 2️⃣ **Clone este repositório**  
 ```bash
-git clone [https://github.com/danynazaretech/WebSecurityAplicationFatecJacarei.git]
+git clone https://github.com/danynazaretech/WebSecurityAplicationFatecJacarei.git
 ```
 
 3️⃣ **Acesse a pasta do projeto**  
