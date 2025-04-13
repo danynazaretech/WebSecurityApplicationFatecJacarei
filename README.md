@@ -20,12 +20,12 @@ Se ainda não tiver, baixe e instale o Docker Desktop a partir do site oficial:
 
 2️⃣ **Clone este repositório**  
 ```bash
-git clone https://github.com/seu-usuario/seu-repositorio.git
+git clone [https://github.com/danynazaretech/WebSecurityAplicationFatecJacarei.git]
 ```
 
 3️⃣ **Acesse a pasta do projeto**  
 ```bash
-cd seu-repositorio
+cd WebSecurityAplicationFatecJacarei
 ```
 
 4️⃣ **Construa e execute o container com Docker Compose**  
@@ -42,11 +42,11 @@ docker-compose up --build
   ```bash
   docker-compose up -d --build
   ```
-  - Ver os conatiners que estão rodando:
+  - Ver os containers que estão rodando:
   ```bash
   docker ps
   ```
-  - Parar apenas um conatiner:
+  - Parar apenas um container:
   ```bash
   docker stope container
   ```
@@ -59,7 +59,7 @@ docker-compose up --build
 
 ## 🛠️ Personalização
 
-Você pode editar o arquivo `docker-compose.yml` e o `Dockerfile` para adaptar às suas necessidades específicas.
+Você pode editar o arquivo `docker-compose.yml` e o `Dockerfile` para adaptar às suas necessidades específicas dos projetos.
 
 ---
 
