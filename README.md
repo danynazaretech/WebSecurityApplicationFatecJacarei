@@ -42,7 +42,15 @@ docker-compose up --build
   ```bash
   docker-compose up -d --build
   ```
-- Para parar os containers:
+  - Ver os conatiners que estão rodando:
+  ```bash
+  docker ps
+  ```
+  - Parar apenas um conatiner:
+  ```bash
+  docker stope container
+  ```
+- Parar todos os containers:
   ```bash
   docker-compose down
   ```
