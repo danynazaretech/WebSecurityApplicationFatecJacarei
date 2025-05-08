@@ -513,8 +513,113 @@
         </section>
 
         <section class="my-5">
-            <h2 class="mb-4"> OWASP (Open Worldwide Application Security Project)</h2>
-            <p>A OWASP é uma comunidade open source e sem fins lucrativos de desenvolvedores, pesquisadores e evangelistas dedicada a melhorar a segurança de aplicações web, aplicativos, API, nuvem e IoT  através de ferramentas, códigos, documentação e padrões abertos.</p>
+            <h2 class="mb-4"> OWASP - Open Worldwide Application Security Project</h2>
+           
+            <div class="highlight-box">
+                <blockquote class="blockquote">
+                    <p>A OWASP é uma comunidade open source e sem fins lucrativos de desenvolvedores, pesquisadores e evangelistas dedicada a melhorar a segurança de aplicações web, aplicativos, API, nuvem e IoT  através de ferramentas, códigos, documentação e padrões abertos.</p>
+                </blockquote>
+            </div>
+            <h3 class="mt-4 fs-3 text text-primary fw-bold">AS 10 Principais vulnerabilidades de Segurança em aplicações web
+                de acordo com a OWASP
+                </h4>
+            <img src="img/owasp_top_10.png" alt="Tríade CID" class="img-fluid mb-3">
+            <div class="bg-light text-dark p-4">
+                <div class="container">
+                  <h1 class="text-primary mb-4">OWASP Top 10 - Aula Didática com Aplicações Práticas</h1>
+                  <p class="mb-4">
+                    A <strong>OWASP (Open Worldwide Application Security Project)</strong> é uma comunidade open source dedicada a melhorar a segurança de aplicações web, APIs, nuvem e IoT, promovendo ferramentas e boas práticas. O OWASP Top 10 identifica as 10 vulnerabilidades mais críticas em aplicações modernas.
+                  </p>
+              
+                  <div class="card mb-3 border-primary">
+                    <div class="card-body">
+                      <h2 class="card-title text-primary">A01:2021 - Broken Access Control</h2>
+                      <p><strong>Descrição:</strong> FMecanismos de autorização falhos que permitem que usuários acessem dados ou funcionalidades indevidos além do  permitido.
+                      </p>
+                      <p><strong>Aplicação prática:</strong> Um usuário comum acessando rota de administrador (ex: /admin) sem verificação de privilégio.</p>
+                    </div>
+                  </div>
+              
+                  <div class="card mb-3 border-secondary">
+                    <div class="card-body">
+                      <h2 class="card-title text-secondary">A02:2021 - Cryptographic Failures</h2>
+                      <p><strong>Descrição:</strong> Exposição no uso de dados sensíveis que estão deixando de serem criptografados.
+                      </p>
+                      <p><strong>Aplicação prática:</strong> Enviar senha em texto puro via HTTP ou armazenar CPF sem criptografia no banco.</p>
+                    </div>
+                  </div>
+              
+                  <div class="card mb-3 border-danger">
+                    <div class="card-body">
+                      <h2 class="card-title text-danger">A03:2021 - Injection</h2>
+                      <p><strong>Descrição:</strong> Inserção de comandos  maliciosos nos sistemas através de SQL Injection, NoSQL Injection, Command Injection, XSS.</p>
+                      <p><strong>Aplicação prática:</strong> Campo de busca que aceita comandos SQL, como: <code>' OR '1'='1</code>.</p>
+                    </div>
+                  </div>
+              
+                  <div class="card mb-3 border-warning">
+                    <div class="card-body">
+                      <h2 class="card-title text-warning">A04:2021 - Insecure Design</h2>
+                      <p><strong>Descrição:</strong> Vulnerabilidades intrínsecas à arquiteturas/design do software, sem considerar os riscos de cada módulo.</p>
+                      <p><strong>Aplicação prática:</strong> API sem controle de tentativas de login, permitindo ataques de força bruta.</p>
+                    </div>
+                  </div>
+              
+                  <div class="card mb-3 border-info">
+                    <div class="card-body">
+                      <h2 class="card-title text-info">A05:2021 - Security Misconfiguration</h2>
+                      <p><strong>Descrição:</strong> Configurações incorretas ou não protegidas.</p>
+                      <p><strong>Aplicação prática:</strong> Deploy com painel de administração acessível publicamente.</p>
+                    </div>
+                  </div>
+              
+                  <div class="card mb-3 border-dark">
+                    <div class="card-body">
+                      <h2 class="card-title text-dark">A06:2021 - Vulnerable and Outdated Components</h2>
+                      <p><strong>Descrição:</strong> Uso de bibliotecas, dependências ou plugins desatualizados e com falhas conhecidas.</p>
+                      <p><strong>Aplicação prática:</strong> Aplicação rodando com versão antiga do jQuery com falhas XSS conhecidas.</p>
+                    </div>
+                  </div>
+              
+                  <div class="card mb-3 border-success">
+                    <div class="card-body">
+                      <h2 class="card-title text-success">A07:2021 - Identification and Authentication Failures</h2>
+                      <p><strong>Descrição:</strong> Falhas nos mecanismos de autenticação, como ausência de limitação de tentativas ou senhas fracas.</p>
+                      <p><strong>Aplicação prática:</strong> Sistema que permite infinitas tentativas de senha sem bloqueio de IP.</p>
+                    </div>
+                  </div>
+              
+                  <div class="card mb-3 border-primary">
+                    <div class="card-body">
+                      <h2 class="card-title text-primary">A08:2021 - Software and Data Integrity Failures</h2>
+                      <p><strong>Descrição:</strong> Uso de código ou dados sem verificação de integridade ou sem assinatura digital.</p>
+                      <p><strong>Aplicação prática:</strong> Atualizações de sistema via FTP sem checagem de hash ou assinatura.</p>
+                    </div>
+                  </div>
+              
+                  <div class="card mb-3 border-secondary">
+                    <div class="card-body">
+                      <h2 class="card-title text-secondary">A09:2021 - Security Logging and Monitoring Failures</h2>
+                      <p><strong>Descrição:</strong> ausêcia de logs e alertas dificultando a detecção de ataques, e  a não conformidade com as regulamentações de segurança(GDPR, LGPD);                        .</p>
+                      <p><strong>Aplicação prática:</strong> Sistema que não registra tentativas de login mal-sucedidas.</p>
+                    </div>
+                  </div>
+              
+                  <div class="card mb-3 border-danger">
+                    <div class="card-body">
+                      <h2 class="card-title text-danger">A10:2021 - Server-Side Request Forgery (SSRF)</h2>
+                      <p><strong>Descrição:</strong> O servidor é enganado  para realizar requisições a destino internos ou externos maliciosos.
+                      </p>
+                      <p><strong>Aplicação prática:</strong> Upload de URL que permite acesso a <code>http://localhost:8000/admin</code>.</p>
+                    </div>
+                  </div>
+              
+                  <footer class="mt-5 text-muted">
+                    Aula desenvolvida para graduação em Segurança no Desenvolvimento de Sistemas – com foco prático e explicativo sobre o OWASP Top 10.
+                  </footer>
+                </div>
+            </div>
+            
             <hr class="my-5">
         </section>
         <section class="mb-5">
