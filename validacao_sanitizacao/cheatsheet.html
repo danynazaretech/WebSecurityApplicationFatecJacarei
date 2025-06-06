@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área de Códigos</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Ícones do Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        .code-container {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .code-header {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-bottom: none;
+            padding: 5px 10px;
+            border-radius: 5px 5px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .code-content {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 15px;
+            border-radius: 0 0 5px 5px;
+            overflow-x: auto;
+        }
+        pre {
+            margin: 0;
+            white-space: pre-wrap;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .copy-btn {
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: #6c757d;
+        }
+        .copy-btn:hover {
+            color: #0d6efd;
+        }
+        .copy-success {
+            color: #198754;
+            font-size: 0.8rem;
+            margin-left: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Minha Área de Códigos</h1>
+        
+
+        <div id="libraries">
+            <p> Esse laboratório de validação e sanitização será necessário adicionar a bilbioteca <code>express</code>.</p>
+             <!-- Exemplo de bloco de código 2 -->
+            <div class="code-container">
+                <div class="code-header">
+                    <span>Instalar</span>
+                    <div>
+                        <button class="copy-btn" onclick="copyCode(this)">
+                            <i class="bi bi-clipboard"></i> Copiar
+                        </button>
+                        <span class="copy-success"><i class="bi bi-check-circle"></i> Copiado!</span>
+                    </div>
+                </div>
+                <div class="code-content">
+                    <pre><code>npm install express
+npm install -D @types/express 
+npm install sanitize-html
+npm install -D @types/sanitize-html</code></pre>
+                </div>
+            </div>
+        </div>
+        
+        <h2 class="mb-4">Realização dos Testes</h2>
+        <div id="testes">
+            <p>Para realizar os testes siga as seguintes adicione os seguintes códigos no PowerShell ou bash</p>
+            <p style="color: red;"><i>Não se esqueça que há algumas diferenças do curl no bash(linux), cmd e powershell do Windows!</i></p>
+            <!-- Exemplo de bloco de código 2 -->
+            <div class="code-container">
+                <div class="code-header">
+                    <span>Instalar</span>
+                    <div>
+                        <button class="copy-btn" onclick="copyCode(this)">
+                            <i class="bi bi-clipboard"></i> Copiar
+                        </button>
+                        <span class="copy-success"><i class="bi bi-check-circle"></i> Copiado!</span>
+                    </div>
+                </div>
+                <div class="code-content">
+                    <pre><code>curl -X POST http://localhost:3000/validar_semantica   -H "Content-Type: application/json"   -d '{"nome":"x x x","cpf":"983.816.548-41","data_nascimento":"1990-01-01","email":"joao@example.com","senha":"segura123"}'
+                        </code></pre>
+                </div>
+            </div>
+             <!-- Exemplo de bloco de código 2 -->
+        </div>
+        <!-- Você pode adicionar mais blocos de código conforme necessário -->
+    </div>
+
+    <!-- Bootstrap JS e Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        function copyCode(button) {
+            // Encontra o elemento pre mais próximo
+            const codeContent = button.closest('.code-container').querySelector('pre');
+            
+            // Cria um elemento textarea temporário
+            const textarea = document.createElement('textarea');
+            textarea.value = codeContent.textContent;
+            document.body.appendChild(textarea);
+            
+            // Seleciona e copia o texto
+            textarea.select();
+            document.execCommand('copy');
+            
+            // Remove o textarea
+            document.body.removeChild(textarea);
+            
+            // Mostra a mensagem de sucesso
+            const successMsg = button.nextElementSibling;
+            successMsg.style.display = 'inline';
+            
+            // Esconde a mensagem após 2 segundos
+            setTimeout(() => {
+                successMsg.style.display = 'none';
+            }, 2000);
+        }
+    </script>
+</body>
+</html>

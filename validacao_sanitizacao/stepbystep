@@ -1,0 +1,69 @@
+
+
+Aula 8 - Validação, Sanitização, Autenticação e Autorização
+Implementação de controles robustos para proteger a sua aplicação
+de terceiros.
+
+
+
+
+No universo digital contemporâneo, onde sistemas de software processam volumes imensos de dados provenientes de diversas fontes, a integridade e 
+segurança dessas informações tornaram-se preocupações primordiais. Assim como um porteiro verifica cuidadosamente quem entra em um edifício, os sistemas 
+de software necessitam de mecanismos robustos para examinar os dados que recebem antes de processá-los ou armazená-los. Neste contexto, dois processos 
+fundamentais emergem como pilares da segurança digital: a validação e a sanitização de dados. Estas  práticas de verificação e limpeza de entrada de dados estão intimamente relacionadas a princípios fundamentais de segurança, tais como validação e sanitização de entrada (input validation and sanitization). 
+
+Essa análise de entrada dos dados no sistema  é crucial para:
+Para verificar se o formato do dado é válido, como um email@mail.com válido;
+Fazer análise semântica do dado com o contexto na qual ele está sendo adicionado (o formato do CPF pode ser válido, porém os digitos verificadores não);
+De não contém caracteres perigosos ou código malicioso que possa explorar vulnerabilidades como SQL Injection ou XSS;
+Mantém a integridade dos dados armazenados;
+Evita comportamentos inesperados da aplicação;
+
+
+A Natureza da Validação de Dados
+A validação representa o primeiro filtro no processo de verificação de entrada, funcionando como um guardião que determina se os dados estão em conformidade com os requisitos estabelecidos. Este processo avalia se a entrada atende a critérios predefinidos, como formato, tipo, comprimento e intervalo de valores aceitáveis. Diferentemente da sanitização, a validação não modifica os dados – ela simplesmente os aceita ou rejeita com base nas regras especificadas.
+No âmbito técnico, a validação pode ser categorizada em dois níveis principais: sintática e semântica. A validação sintática verifica se os dados estão estruturalmente corretos, como um endereço de e-mail que contém o símbolo "@" e um domínio válido, ou um código postal que segue o formato específico do país. Por outro lado, a validação semântica examina se os dados fazem sentido no contexto da aplicação, como verificar se uma data de nascimento não está no futuro ou se um preço não é negativo.
+Implementações eficazes de validação frequentemente utilizam bibliotecas especializadas, expressões regulares, ou frameworks que oferecem funcionalidades de validação integradas. Por exemplo, frameworks web modernos como Django, Ruby on Rails e Laravel incluem validadores robustos que simplificam a implementação de regras complexas. A validação deve ocorrer tanto no cliente quanto no servidor, embora a validação do lado do servidor seja crucial para a segurança, já que a validação do lado do cliente pode ser facilmente contornada.
+
+A Complexidade da Sanitização de Dados
+Enquanto a validação determina se os dados devem ser aceitos, a sanitização determina como eles devem ser processados para uso seguro. A sanitização é o processo de examinar dados de entrada para identificar conteúdo que poderia ser interpretado como código malicioso ou comandos indesejados, causando inconsistência semântica ou vulnerabilidades no sistema, e assim removendo-os ou modificando-os para torná-los seguros.
+A sanitização emprega diversas técnicas, incluindo remoção, escape, codificação, substituição e normalização. Por exemplo, ao processar comentários de usuários que serão exibidos em uma página web, a sanitização pode remover tags HTML perigosas como <script> ou converter caracteres especiais em entidades HTML para prevenir ataques de Cross-Site Scripting (XSS). De modo similar, ao construir consultas SQL com entrada do usuário, a sanitização escapa caracteres especiais ou utiliza consultas parametrizadas para evitar injeção de SQL.
+Um aspecto crucial da sanitização é sua especificidade contextual. Diferentes contextos de uso – HTML, SQL, comandos de shell, caminhos de arquivo – requerem abordagens de sanitização distintas. Uma estratégia que funciona para prevenir XSS pode ser ineficaz contra injeção de SQL. Portanto, bibliotecas especializadas como DOMPurify para JavaScript, HTMLPurifier para PHP, ou o módulo html.escape em Python são frequentemente empregadas para garantir sanitização adequada ao contexto.
+
+
+
+
+Diferenças entre validação e sanitização
+
+Validação
+O processo de garantir se os dados estão em conformidade com formatos, tipos, restrições antes de ser processado pelo sistema.
+
+Exemplo: tipos estão corretos, quantidade de caracteres, formato da entrada
+
+
+Sanitização
+A sanitização é o processo de examinar dados de entrada para identificar conteúdo que poderia ser interpretado como código malicioso ou comandos indesejados, causando inconsistência semântica ou vulnerabilidades no sistema, e assim removendo-os ou modificando-os para torná-los seguros
+
+Exemplo: Remover tags HTML de um comentário, Scripts Java Script e sentenças SQL.
+
+
+
+Conclusão
+A validação e sanitização de dados representam componentes fundamentais na arquitetura de segurança de qualquer sistema de software moderno. Enquanto a validação atua como um porteiro que determina quais dados podem entrar no sistema, a sanitização funciona como um filtro purificador que neutraliza elementos potencialmente perigosos. Juntos, estes processos formam uma barreira defensiva essencial contra uma ampla gama de vulnerabilidades e ataques.
+À medida que os sistemas digitais se tornam mais complexos e interconectados, a importância destes processos apenas aumenta. Novas ameaças emergem constantemente, exigindo abordagens cada vez mais sofisticadas para validação e sanitização. Além disso, desafios específicos como a verificação de datas históricas e a detecção de conteúdo falso demonstram que estes processos devem evoluir continuamente para abordar necessidades emergentes.
+
+Atenção!
+Assim como uma pessoa precisa verificar pela porta quem está entrando na sua casa, o software precisa dessa etapa para assegurar que os dados fornecidos ao sistema estejam corretos antes de serem processados ou armazenados. As práticas de verificação e limpeza de entrada de dados estão intimamente relacionadas a princípios fundamentais de segurança, tais como validação e sanitização de entrada (input validation and sanitization).
+
+instalando o typescript para poder compilar códigos no seu projeto
+e o @types/node para integrar o TypeScript com o Node
+npm install express  @types/express  -D
+
+
+
+Referências:
+
+https://top10proactive.owasp.org/archive/2024/#how-to-use-this-document
+
+
+
