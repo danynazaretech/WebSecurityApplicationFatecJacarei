@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratório OWASP - Bem-vindo!</title>
+
+    
+</head>
+<body>
+    <div class="container">
+
+
+        <h3>Simulação de Mudança de Senha (Vulnerável)</h3>
+        <p>Preencha para mudar sua senha (isso simula uma ação POST no servidor).</p>
+        <form action="/change-password-vulnerable" method="POST">
+            <label for="new_password_vulnerable">Nova Senha:</label>
+            <input type="password" id="new_password_vulnerable" name="new_password" required>
+            <button type="submit">Mudar Senha</button>
+        </form>
+        <p id="vulnerable-status" style="color: green;"></p>
+
+        <hr> <h3>Formulário de Mudança de Senha (PROTEGIDO por CSRF)</h3>
+        <p><a href="/protected-form">Acessar Formulário Protegido</a></p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const status = urlParams.get('status');
+            const vulnerableStatusDiv = document.getElementById('vulnerable-status');
+            const protectedStatusDiv = document.getElementById('protected-status'); // Pode não ser usado aqui, mas útil
+
+            if (status === 'password_changed_vulnerable') {
+                vulnerableStatusDiv.textContent = 'Senha VULNERÁVEL alterada com sucesso (verifique o console do servidor)!';
+                vulnerableStatusDiv.style.color = 'green';
+            } else if (status === 'password_not_changed_vulnerable') {
+                vulnerableStatusDiv.textContent = 'Erro ao alterar senha VULNERÁVEL.';
+                vulnerableStatusDiv.style.color = 'red';
+            }
+            // A parte do protected-status está no HTML do /protected-form
+        });
+    </script>
+</body>
+</html>
