@@ -1,0 +1,46 @@
+npm init - y
+
+
+instale o typescript para poder compilar códigos no seu projeto
+e o @types/node para integrar o TypeScript com o Node
+npm install typescript  @types/node  -D
+
+
+
+
+npx tsc --init
+
+
+tsconfig.json
+
+
+
+
+Para configurar corretamente o tsconfig.json de acordo com a versão do Node.js 
+que você está utilizando, é essencial alinhar as opções de target, lib e module 
+com os recursos de ECMAScript suportados por essa versão. A Microsoft mantém uma 
+página no GitHub https://github.com/microsoft/TypeScript/wiki/Node-Target-Mapping,
+que fornece recomendações específicas para diferentes versões do Node.js. Para isso 
+execute as seguintes instruções:
+
+1.  verifique a versão do Node.js através do node -v,
+2.  vá até o tsconfig.json e altere as configurações target, lib e module,
+3.  e para alinhar alinhar a pasta onde tem o arquivo .ts que vai ser compilado adicione a pasta mkdir src 
+  e em seguida altere a opção "rootDir": "./src".
+
+
+ Para adicionar o código do frontend adicione a pasta mkdir public na raíz do projeto.
+
+
+"scripts": {
+    "dev":"tsx watch src/server.ts"
+},
+
+Para testar o funcionamento do servidor primeiro adicione 
+a pasta src arquivo server.ts,e logo execute npm run dev
+
+echo "console.log(\"Olá mundo\");" > src/server.ts
+
+execute npm run dev
+
+Referência: https://www.youtube.com/watch?v=6DGWzDxi6Cc
